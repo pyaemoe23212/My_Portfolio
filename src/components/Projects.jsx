@@ -1,26 +1,27 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+// updated imports - filenames / casing fixed as requested
 import faqImage from "../assets/faqpage.png";
-import faqHome from "../assets/faqhome.png";
-import faqList from "../assets/faqlist.png";
-import faqFeedback from "../assets/faqfeedback.png";
-import CarShowroomImage from "../assets/carshowroom.png";
-import CarCard from "../assets/carcard.png";
-import CarDetail from "../assets/cardetail.png";
-import CarHome from "../assets/carhome.png";
-import CarLogo from "../assets/carlogo.png";
-import RentCar from "../assets/rentcar.png";
-import SoldCar from "../assets/soldcar.png";
-import TicketImage from "../assets/ticketanywhere.png";
+import FAQHome from "../assets/FAQHome.png";
+import FAQList from "../assets/FAQList.png";
+import FAQFeedback from "../assets/FAQFeedback.png";
+import CarShowroomImage from "../assets/CarShowroom.png";
+import CarCard from "../assets/CarCard.png";
+import CarDetail from "../assets/CarDetail.png";
+import CarHome from "../assets/CarHome.png";
+import CarLogo from "../assets/CarLogo.png";
+import RentCar from "../assets/RentCar.png";
+import SoldCar from "../assets/SoldCar.png";
+import TicketImage from "../assets/TicketAnywhere.png";
 import PortfolioImage from "../assets/portfolio.png";
-import EcommerceImage from "../assets/ecommerce.png";
-import EcommHome from "../assets/ecommhome.png";
-import EcommOrder from "../assets/ecommorder.png";
-import EcommCheckout from "../assets/ecommcheckout.png";
+import EcommerceImage from "../assets/ECommerce.png";
+import ECommHome from "../assets/ECommHome.png";
+import ECommOrder from "../assets/ECommOrder.png";
+import ECommCheckout from "../assets/ECommCheckout.png";
 import ElementaryImage from "../assets/elementaryschool.png";
-import EleAbout from "../assets/eleabout.png";
-import EleCourse from "../assets/elecourse.png";
-import EleTeachers from "../assets/eleteachers.png";
+import EleAbout from "../assets/EleAbout.png";
+import EleCourse from "../assets/EleCourse.png";
+import EleTeachers from "../assets/EleTeachers.png";
 import "../styles/projects.css";
 
 function Projects() {
@@ -112,7 +113,7 @@ function Projects() {
       title: "RIC Gaming Club FAQ Page ChatBot",
       description:
         "This is a class project. This is the chatbot website that everyone who is interested in joining RIC Gaming Club can ask everything about the club.",
-      images: [faqImage,faqHome,faqList,faqFeedback],
+      images: [faqImage, FAQHome, FAQList, FAQFeedback],
       githubLink:
         "https://github.com/pyaemoe23212/RIC-Gaming-Club-FAQ-Page.git",
       liveLink:
@@ -132,7 +133,15 @@ function Projects() {
       title: "CarShowroom Website",
       description:
         "Developed the frontend using React (Vite) and Tailwind CSS as part of a MERN stack project. Focused on creating a clean, responsive, and user-friendly dashboard for displaying available and rentable cars.",
-      images: [CarHome,CarShowroomImage,CarLogo,CarCard,CarDetail,SoldCar,RentCar],
+      images: [
+        CarHome,
+        CarShowroomImage,
+        CarLogo,
+        CarCard,
+        CarDetail,
+        SoldCar,
+        RentCar,
+      ],
       githubLink: "https://github.com/pyaemoe23212/CarShowroom_User.git",
       liveLink: "https://carshowroomwebsite.netlify.app/",
     },
@@ -150,7 +159,7 @@ function Projects() {
       title: "Mini ECommerce Website",
       description:
         "Developed the frontend using React (Vite) and Tailwind CSS for a PHP Laravel backend, featuring product browsing, cart management, and a seamless shopping experience.",
-      images: [EcommerceImage,EcommHome,EcommCheckout,EcommOrder],
+      images: [EcommerceImage, ECommHome, ECommCheckout, ECommOrder],
       githubLink: "https://github.com/pyaemoe23212/E-Commerce-Website.git",
       liveLink: "",
     },
@@ -159,7 +168,7 @@ function Projects() {
       title: "Online Course E-Learning Website for Elementary School(Ui/Ux)",
       description:
         "Designed using Figma to create an intuitive and user-friendly learning interface for young students.",
-      images: [ElementaryImage,EleCourse,EleAbout,EleTeachers],
+      images: [ElementaryImage, EleCourse, EleAbout, EleTeachers],
     },
   ];
 
