@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import FAQImage from "../assets/faqpage.png";
-import FAQHome from "../assets/faqhome.png";
-import FAQList from "../assets/faqlist.png";
-import FAQFeedback from "../assets/faqFeedback.png";
+import faqImage from "../assets/faqpage.png";
+import faqHome from "../assets/faqhome.png";
+import faqList from "../assets/faqlist.png";
+import faqFeedback from "../assets/faqFeedback.png";
 import CarShowroomImage from "../assets/carshowroom.png";
 import CarCard from "../assets/carcard.png";
 import CarDetail from "../assets/cardetail.png";
@@ -112,7 +112,7 @@ function Projects() {
       title: "RIC Gaming Club FAQ Page ChatBot",
       description:
         "This is a class project. This is the chatbot website that everyone who is interested in joining RIC Gaming Club can ask everything about the club.",
-      images: [FAQImage,FAQHome,FAQList,FAQFeedback],
+      images: [faqImage,faqHome,faqList,faqFeedback],
       githubLink:
         "https://github.com/pyaemoe23212/RIC-Gaming-Club-FAQ-Page.git",
       liveLink:
