@@ -86,7 +86,7 @@ function Footer() {
     <footer className="footer" ref={footerRef}>
       <canvas ref={canvasRef} className="footer-canvas"></canvas>
       <div className="footer-container">
-        <p>© 2025 Your Name. All rights reserved.</p>
+        <p>© 2025 TunBhone PyaeMoe. All rights reserved.</p>
       </div>
     </footer>
   );

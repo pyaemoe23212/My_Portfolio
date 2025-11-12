@@ -55,8 +55,6 @@
   overflow: visible;
 }
 
-
-
 .project-content {
   flex: 1;
   display: flex;
@@ -75,8 +73,13 @@
   border-radius: 5px;
   max-height: 200px;
   object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
+.project-image:hover {
+  transform: scale(1.05);
+}
 
 .project-preview {
   position: fixed;
@@ -140,6 +143,157 @@
   color: inherit !important;
 }
 
+/* Modal styles */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-in;
+  padding: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  width: 100%;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 8px;
+  animation: slideIn 0.3s ease-in;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+  pointer-events: auto;
+  z-index: 10000;
+}
+
+.close-btn:hover {
+  color: #00d4ff;
+}
+
+.image-count {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  z-index: 3;
+}
+
+.gallery-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s;
+  z-index: 10001;
+  pointer-events: auto;
+}
+
+.gallery-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.image-indicators {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10001;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background: rgba(255, 255, 255, 1);
+  width: 12px;
+  height: 12px;
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
 @media (max-width: 1366px) {
   .projects h2 {
     font-size: 2rem;
@@ -179,14 +333,16 @@
   .project-card p {
     font-size: 0.9rem;
   }
-  .project-preview {
-    width: 90%;
-    height: 300px;
-    left: 5%;
+
+  /* Modal responsive for tablet */
+  .modal-content {
+    max-width: 95vw;
+    max-height: 85vh;
   }
-  .preview-iframe {
-    width: 95%;
-    height: 90%;
+
+  .close-btn {
+    top: -40px;
+    font-size: 28px;
   }
 }
 
@@ -197,20 +353,62 @@
   .project-grid {
     grid-template-columns: 1fr;
     max-width: 100%;
+    gap: 1rem;
   }
   .project-card {
     padding: 1rem;
+    gap: 1rem;
   }
   .project-image {
     max-height: 150px;
   }
-  .project-preview {
-    width: 95%;
-    height: 250px;
-    left: 2.5%;
+
+  /* Modal responsive for mobile */
+  .image-modal {
+    padding: 0.5rem;
   }
-  .preview-iframe {
-    width: 100%;
-    height: 90%;
+
+  .modal-content {
+    max-width: 100vw;
+    max-height: 80vh;
+  }
+
+  .modal-image {
+    max-height: 75vh;
+  }
+
+  .close-btn {
+    top: -35px;
+    font-size: 24px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .gallery-btn {
+    font-size: 20px;
+    padding: 8px 12px;
+  }
+
+  .prev-btn {
+    left: 5px;
+  }
+
+  .next-btn {
+    right: 5px;
+  }
+
+  .image-indicators {
+    bottom: 10px;
+    gap: 6px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .dot.active {
+    width: 10px;
+    height: 10px;
   }
 }

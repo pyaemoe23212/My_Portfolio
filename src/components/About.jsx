@@ -88,8 +88,7 @@ function About() {
       <div className="about-container">
         <h2>About Me</h2>
         <p>
-          I'm a passionate web developer with experience in React and modern web
-          technologies.
+          I’m a final-year ICT undergraduate at Rangsit University, Thailand. I have strong technical skills in HTML, CSS, JavaScript (ES6+), React (Vite), TailwindCSS, Node.js, and SQLite, and a growing interest in applying AI to solve real-world challenges. I’m passionate about continuous learning, problem-solving, and building practical solutions that combine creativity and technology.
         </p>
       </div>
     </section>

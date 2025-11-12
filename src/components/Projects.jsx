@@ -1,14 +1,33 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import FAQImage from "../assets/FAQ_Page.png";
+import FAQHome from "../assets/FAQHome.png";
+import FAQList from "../assets/FAQList.png";
+import FAQFeedback from "../assets/FAQFeedback.png";
 import CarShowroomImage from "../assets/CarShowroom.png";
+import CarCard from "../assets/CarCard.png";
+import CarDetail from "../assets/CarDetail.png";
+import CarHome from "../assets/CarHome.png";
+import CarLogo from "../assets/CarLogo.png";
+import RentCar from "../assets/RentCar.png";
+import SoldCar from "../assets/SoldCar.png";
 import TicketImage from "../assets/TicketAnywhere.png";
 import PortfolioImage from "../assets/portfolio.png";
+import EcommerceImage from "../assets/Ecommerce.png";
+import EcommHome from "../assets/EcommHome.png";
+import EcommOrder from "../assets/EcommOrder.png";
+import EcommCheckout from "../assets/EcommCheckout.png";
+import ElementaryImage from "../assets/Elementary_School.png";
+import EleAbout from "../assets/EleAbout.png";
+import EleCourse from "../assets/EleCourse.png";
+import EleTeachers from "../assets/EleTeachers.png";
 import "../styles/projects.css";
 
 function Projects() {
   const projectsRef = useRef(null);
   const canvasRef = useRef(null);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     // GSAP animation for content
@@ -86,19 +105,17 @@ function Projects() {
     };
   }, []);
 
-  // Project data
+  // Project data with image galleries
   const projects = [
     {
       id: 1,
-      title: "RIC Gaming Club FAQ Page",
+      title: "RIC Gaming Club FAQ Page ChatBot",
       description:
-        "This is a class project. This is the website that everyone who is interested in joining RIC Gaming Club can ask everything about the club.",
-      image: FAQImage,
+        "This is a class project. This is the chatbot website that everyone who is interested in joining RIC Gaming Club can ask everything about the club.",
+      images: [FAQImage,FAQHome,FAQList,FAQFeedback],
       githubLink:
         "https://github.com/pyaemoe23212/RIC-Gaming-Club-FAQ-Page.git",
       liveLink:
-        "https://pyaemoe23212.github.io/RIC-Gaming-Club-FAQ-Page/Ask-a-question/ask_questions.html",
-      previewUrl:
         "https://pyaemoe23212.github.io/RIC-Gaming-Club-FAQ-Page/Ask-a-question/ask_questions.html",
     },
     {
@@ -106,7 +123,7 @@ function Projects() {
       title: "Portfolio Website",
       description:
         "A personal portfolio website built with React and Vite, showcasing my projects and skills with a modern, responsive design.",
-      image: PortfolioImage,
+      images: [PortfolioImage],
       githubLink: "https://github.com/pyaemoe23212/My_Portfolio.git",
       liveLink: "https://tbpmportfolio.netlify.app/",
     },
@@ -114,26 +131,82 @@ function Projects() {
       id: 3,
       title: "CarShowroom Website",
       description:
-        "Designed and developed the dashboard layout using React (Vite) and Tailwind CSS to display available and rentable cars with a clean, intuitive interface..",
-      image: CarShowroomImage,
+        "Developed the frontend using React (Vite) and Tailwind CSS as part of a MERN stack project. Focused on creating a clean, responsive, and user-friendly dashboard for displaying available and rentable cars.",
+      images: [CarHome,CarShowroomImage,CarLogo,CarCard,CarDetail,SoldCar,RentCar],
       githubLink: "https://github.com/pyaemoe23212/CarShowroom_User.git",
-      liveLink: "https://carshowroomuser.netlify.app/",
+      liveLink: "https://carshowroomwebsite.netlify.app/",
     },
     {
-      id: 3,
+      id: 4,
       title: "Ticket Website",
       description:
-        "Built a responsive frontend web application using React (Vite) and Tailwind CSS, focusing on a smooth and user-friendly experience for browsing events and booking tickets.",
-      image: TicketImage,
+        "Developed the frontend using React (Vite) and Tailwind CSS for a Python Django backend, focusing on creating a responsive and user-friendly interface for browsing events and booking tickets.",
+      images: [TicketImage],
       githubLink: "https://github.com/pyaemoe23212/Ticket_Website_User.git",
-      liveLink: "https://ticketuser.netlify.app/",
+      liveLink: "https://ticketbrowse.netlify.app/",
+    },
+    {
+      id: 5,
+      title: "Mini ECommerce Website",
+      description:
+        "Developed the frontend using React (Vite) and Tailwind CSS for a PHP Laravel backend, featuring product browsing, cart management, and a seamless shopping experience.",
+      images: [EcommerceImage,EcommHome,EcommCheckout,EcommOrder],
+      githubLink: "https://github.com/pyaemoe23212/E-Commerce-Website.git",
+      liveLink: "",
+    },
+    {
+      id: 6,
+      title: "Online Course E-Learning Website for Elementary School(Ui/Ux)",
+      description:
+        "Designed using Figma to create an intuitive and user-friendly learning interface for young students.",
+      images: [ElementaryImage,EleCourse,EleAbout,EleTeachers],
     },
   ];
+
+  const handleImageClick = (project) => {
+    setSelectedProject(project);
+    setCurrentImageIndex(0);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+    setCurrentImageIndex(0);
+  };
+
+  const handleBackdropClick = (e) => {
+    if (e.target === e.currentTarget) {
+      closeModal();
+    }
+  };
+
+  const nextImage = () => {
+    if (selectedProject) {
+      setCurrentImageIndex(
+        (prev) => (prev + 1) % selectedProject.images.length
+      );
+    }
+  };
+
+  const prevImage = () => {
+    if (selectedProject) {
+      setCurrentImageIndex(
+        (prev) =>
+          (prev - 1 + selectedProject.images.length) %
+          selectedProject.images.length
+      );
+    }
+  };
 
   return (
     <section id="projects" className="projects" ref={projectsRef}>
       <canvas ref={canvasRef} className="projects-canvas"></canvas>
       <h2>Projects</h2>
+      <p>
+        Currently the projects are deployed using Netlify Drop, so it only shows
+        the frontend layout and design the backend isn't included, so features
+        like data or login won't work.
+      </p>
+      <br />
       <div className="project-grid">
         {projects.map((project) => (
           <div key={project.id} className="project-card">
@@ -159,22 +232,67 @@ function Projects() {
                 )}
               </div>
             </div>
-            {project.image && (
+            {project.images && project.images[0] && (
               <div className="project-image-container">
                 <img
-                  src={project.image}
+                  src={project.images[0]}
                   alt={project.title}
                   className="project-image"
-                  onError={(e) => {
-                    console.error("Project image failed to load:", e);
-                    e.target.src = "https://via.placeholder.com/300";
-                  }}
+                  onClick={() => handleImageClick(project)}
+                  style={{ cursor: "pointer" }}
                 />
+                {project.images.length > 1 && (
+                  <span className="image-count">
+                    {project.images.length} images
+                  </span>
+                )}
               </div>
             )}
           </div>
         ))}
       </div>
+
+      {/* Image Gallery Modal */}
+      {selectedProject && (
+        <div className="image-modal" onClick={handleBackdropClick}>
+          <div className="modal-content">
+            <button className="close-btn" onClick={closeModal}>
+              ✕
+            </button>
+
+            <div className="gallery-container">
+              <img
+                src={selectedProject.images[currentImageIndex]}
+                alt={`${selectedProject.title} - ${currentImageIndex + 1}`}
+                className="modal-image"
+              />
+
+              {selectedProject.images.length > 1 && (
+                <>
+                  <button className="gallery-btn prev-btn" onClick={prevImage}>
+                    ❮
+                  </button>
+                  <button className="gallery-btn next-btn" onClick={nextImage}>
+                    ❯
+                  </button>
+
+                  <div className="image-indicators">
+                    {selectedProject.images.map((_, index) => (
+                      <span
+                        key={index}
+                        className={`dot ${
+                          index === currentImageIndex ? "active" : ""
+                        }`}
+                        onClick={() => setCurrentImageIndex(index)}
+                      ></span>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
