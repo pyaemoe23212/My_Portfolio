@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+     :root {
+      /*DarkMode*/
+       --bg-primary: #06102c;
+       --bg-secondary: #000000;
+       --text-primary: #E8ECEF;
+       --text-secondary: #D3D8DC;
+       --accent: #00D4FF;
+       --hover: #FFD700;
+     }
+
+     /*LightMode*/
+     [data-theme="light"] {
+       --bg-primary: #D7B9A5;
+       --bg-secondary: #A68A64;
+       --text-primary: #1A1A1A;
+       --text-secondary: #4A4A4A;
+       --accent: #ffd900;
+       --hover: #D4A017;
+     }
+
+     * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+     }
+
+     html, body {
+       font-family: 'Poppins', Arial, sans-serif;
+       background: var(--bg-primary) !important;
+       color: var(--text-primary) !important;
+       -webkit-font-smoothing: antialiased;
+       -moz-osx-font-smoothing: grayscale;
+       width: 100%;
+       min-height: 100vh;
+       opacity: 1 !important;
+     }
+
+     .app {
+      width: 100%;
+      opacity: 1 !important;
+     }
+
+     h1, h2, h3, p, a {
+      opacity: 1 !important;
+     }
