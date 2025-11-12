@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import faqImage from "../assets/faqpage.png";
 import faqHome from "../assets/faqhome.png";
 import faqList from "../assets/faqlist.png";
-import faqFeedback from "../assets/faqFeedback.png";
+import faqFeedback from "../assets/faqfeedback.png";
 import CarShowroomImage from "../assets/carshowroom.png";
 import CarCard from "../assets/carcard.png";
 import CarDetail from "../assets/cardetail.png";
