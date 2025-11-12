@@ -107,8 +107,8 @@ function Projects() {
       description:
         "A personal portfolio website built with React and Vite, showcasing my projects and skills with a modern, responsive design.",
       image: PortfolioImage,
-      githubLink: "https://github.com/pyaemoe23212/CarShowroom_User.git",
-      liveLink: "https://carshowroomuser.netlify.app/",
+      githubLink: "https://github.com/pyaemoe23212/My_Portfolio.git",
+      liveLink: "https://tbpmportfolio.netlify.app/",
     },
     {
       id: 3,
