@@ -92,26 +92,26 @@ function Skills() {
       <div className="skills-grid">
         <div className="skill-item">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/250px-HTML5_logo_and_wordmark.svg.png"
             alt="HTML5"
             className="skill-icon"
           />
           <p>HTML</p>
         </div>
         <div className="skill-item"><img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/726px-CSS3_logo_and_wordmark.svg.png"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1920px-CSS3_logo_and_wordmark.svg.png"
             alt="CSS"
             className="skill-icon"
           />
           <p>CSS</p></div>
         <div className="skill-item"><img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2560px-Tailwind_CSS_Logo.svg.png"
+            src="https://cdn.creazilla.com/icons/3254431/tailwindcss-icon-icon-size_512.png"
             alt="TailWind CSS"
-            className="skill-icon"
+            className="skill-icon border-2 border-gray-300 rounded-lg"
           />
           <p>TailWind CSS</p></div>
         <div className="skill-item"><img
-            src="https://lh6.googleusercontent.com/proxy/8CGXD0uyb6RKJLgXrBFSqn5abhmt1HmwduYTq9p-MHLIp6hzl0wjgjxXbRp2hXDgaiLCyy9d7IHSm2Euuzs60UIPDvxil0uKXCMiAIuIPCoNGpau1K40JRY"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Javascript_badge.svg/1280px-Javascript_badge.svg.png"
             alt="JavaScript"
             className="skill-icon"
           />
@@ -123,7 +123,7 @@ function Skills() {
           />
           <p>Node.js</p></div>
         <div className="skill-item"><img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/3840px-Python-logo-notext.svg.png"
             alt="Python"
             className="skill-icon"
           />

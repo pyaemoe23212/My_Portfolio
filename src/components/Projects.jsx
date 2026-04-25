@@ -121,15 +121,6 @@ function Projects() {
     },
     {
       id: 2,
-      title: "Portfolio Website",
-      description:
-        "A personal portfolio website built with React and Vite, showcasing my projects and skills with a modern, responsive design.",
-      images: [PortfolioImage],
-      githubLink: "https://github.com/pyaemoe23212/My_Portfolio.git",
-      liveLink: "https://tbpmportfolio.netlify.app/",
-    },
-    {
-      id: 3,
       title: "CarShowroom Website",
       description:
         "Developed the frontend using React (Vite) and Tailwind CSS as part of a MERN stack project. Focused on creating a clean, responsive, and user-friendly dashboard for displaying available and rentable cars.",
@@ -146,7 +137,7 @@ function Projects() {
       liveLink: "https://carshowroomwebsite.netlify.app/",
     },
     {
-      id: 4,
+      id: 3,
       title: "Ticket Website",
       description:
         "Developed the frontend using React (Vite) and Tailwind CSS for a Python Django backend, focusing on creating a responsive and user-friendly interface for browsing events and booking tickets.",
@@ -155,7 +146,7 @@ function Projects() {
       liveLink: "https://ticketbrowse.netlify.app/",
     },
     {
-      id: 5,
+      id: 4,
       title: "Mini ECommerce Website",
       description:
         "Developed the frontend using React (Vite) and Tailwind CSS for a PHP Laravel backend, featuring product browsing, cart management, and a seamless shopping experience.",
@@ -164,7 +155,7 @@ function Projects() {
       liveLink: "",
     },
     {
-      id: 6,
+      id: 5,
       title: "Online Course E-Learning Website for Elementary School(Ui/Ux)",
       description:
         "Designed using Figma to create an intuitive and user-friendly learning interface for young students.",
